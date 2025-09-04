@@ -1,0 +1,263 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unnikrishnan A | AI Web Developer & Cybersecurity Enthusiast</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="cyber-loader"></div>
+            <div class="loading-text">INITIALIZING SYSTEM...</div>
+            <div class="code-rain">
+                <span>[OK] Loading neural networks...</span>
+                <span>[OK] Connecting to mainframe...</span>
+                <span>[OK] Securing connections...</span>
+                <span>[OK] Welcome, Unnikrishnan A</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="glitch-text" data-text="UA">UA</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="{% url 'projects' %}" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="{% url 'vlogs' %}" class="nav-link">Vlogs</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="matrix-bg"></div>
+        <div class="particles"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="greeting">{{ content.greeting|default:"Hi, I'm" }}</span>
+                    <span class="name glitch-text" data-text="{{ content.name|default:'Unnikrishnan A' }}">{{ content.name|default:"Unnikrishnan A" }}</span>
+                </h1>
+                <div class="typewriter-container">
+                    <span class="typewriter-text">{{ content.typewriter|default:"AI Web Developer 🤖 Cybersecurity Enthusiast" }}</span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description">
+                    {{ content.hero_description|default:"B.Tech CSE 3rd Year | IEEE CS Society Secretary | Building the future with AI & securing it with cybersecurity expertise" }}
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-terminal"></i>
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-icon">
+                    <i class="fas fa-brain ai-icon"></i>
+                </div>
+                <div class="floating-icon">
+                    <i class="fas fa-shield-alt security-icon"></i>
+                </div>
+                <div class="floating-icon">
+                    <i class="fas fa-code dev-icon"></i>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">{{ content.about_title|default:"About" }} <span class="highlight">{{ content.about_highlight|default:"Me" }}</span></h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description">
+                        {{ content.about_description|default:"I'm a passionate Computer Science student at College of Engineering Cherthala, currently serving as the Secretary of IEEE Computer Society. With a strong foundation in AI development and cybersecurity, I love building innovative web solutions and securing digital landscapes." }}
+                    </p>
+                    <div class="experience-cards">
+                        <div class="exp-card">
+                            <div class="exp-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>{{ content.experience1_title|default:"IEEE CS Secretary" }}</h3>
+                            <p>{{ content.experience1_desc|default:"Leading tech events and fostering collaboration among students" }}</p>
+                        </div>
+                        <div class="exp-card">
+                            <div class="exp-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3>{{ content.experience2_title|default:"SPACS CEC Member" }}</h3>
+                            <p>{{ content.experience2_desc|default:"Design Team & Operations Team member driving innovation" }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="92">0</span>
+                        <span class="stat-label">Plus Two Score (%)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="3">0</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">{{ content.skills_title|default:"Technical" }} <span class="highlight">{{ content.skills_highlight|default:"Arsenal" }}</span></h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>AI & Development</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Web Development</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Cybersecurity</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Penetration Testing</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Communication</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Problem Solving</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Presentation</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">English</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Hindi</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Malayalam</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">{{ content.contact_title|default:"Let's" }} <span class="highlight">{{ content.contact_highlight|default:"Connect" }}</span></h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Cherthala, Kerala, India</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>unnikrishnana803@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+916235279156</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-code"></i>
+                        <a href="https://github.com/unnikrishnan803/myprofile" target="_blank">Portfolio GitHub</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/unnikrishnan-a-b2b146293/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/unnikrishnan803" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/unnikrishnnaann/" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/Unnikrishnan803" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
+

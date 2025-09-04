@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Vlogs | Unnikrishnan A</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="glitch-text" data-text="UA">UA</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="{% url 'index' %}" class="nav-link">Home</a>
+                <a href="{% url 'index' %}#about" class="nav-link">About</a>
+                <a href="{% url 'index' %}#projects" class="nav-link">Projects</a>
+                <a href="{% url 'index' %}#skills" class="nav-link">Skills</a>
+                <a href="{% url 'vlogs' %}" class="nav-link">Vlogs</a>
+                <a href="{% url 'index' %}#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Vlogs Section -->
+    <section id="vlogs" class="vlogs">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Vlogs</span></h2>
+            <div class="vlog-list">
+                {% for vlog in vlogs %}
+                <div class="vlog-item">
+                    <h4>{{ vlog.title }}</h4>
+                    <p>{{ vlog.details }}</p>
+                    {% if vlog.photo %}
+                    <img src="{{ vlog.photo.url }}" alt="{{ vlog.title }}" style="max-width: 300px;">
+                    {% endif %}
+                    <p><strong>Date:</strong> {{ vlog.date }}</p>
+                </div>
+                {% empty %}
+                <p>No vlogs yet. <a href="{% url 'index' %}#vlogs">Add your first vlog</a>!</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
