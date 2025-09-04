@@ -2,6 +2,7 @@ import os
 import sys
 import django
 from django.core.wsgi import get_wsgi_application
+from django.core.management import execute_from_command_line
 from django.conf import settings
 
 # Add the project directory to the Python path
@@ -64,6 +65,10 @@ settings.configure(
 
 # Initialize Django
 django.setup()
+
+# Run migrations for in-memory database
+from django.core.management import call_command
+call_command('migrate', verbosity=0, interactive=False)
 
 # Get the WSGI application
 application = get_wsgi_application()
