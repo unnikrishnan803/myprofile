@@ -5,7 +5,7 @@ from django.core.wsgi import get_wsgi_application
 from django.conf import settings
 
 # Add the project directory to the Python path
-project_dir = os.path.dirname(os.path.dirname(__file__))
+project_dir = os.path.dirname(__file__)
 sys.path.insert(0, project_dir)
 
 # Set the Django settings module
