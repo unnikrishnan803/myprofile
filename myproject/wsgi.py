@@ -17,3 +17,4 @@ application = get_wsgi_application()
 
 # Vercel expects 'handler' or 'app'
 handler = application
+app = application
