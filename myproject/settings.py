@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-2v76+4q=+l7@*qqu^44-w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.vercel.app', 'myprofile-2o6ufh6w4-unnis-projects-690b03bd.vercel.app', 'unnikrishnanaaa803.pythonanywhere.com', '.onrender.com', '.up.railway.app']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.vercel.app', 'myprofile-seven-beryl.vercel.app', 'myprofile-2o6ufh6w4-unnis-projects-690b03bd.vercel.app', 'unnikrishnanaaa803.pythonanywhere.com', '.onrender.com', '.up.railway.app']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
