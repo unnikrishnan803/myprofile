@@ -2,17 +2,10 @@ services:
   - type: web
     name: myproject
     runtime: python3
-    publishDir: build
     buildCommand: |
       pip install -r requirements.txt
       python manage.py collectstatic --noinput
-      python manage.py migrate --run-syncdb
-      mkdir -p build
-      cp -r myproject build/
-      cp -r myapp build/
-      cp manage.py build/
-      cp requirements.txt build/
-      cp -r staticfiles build/
+      python manage.py migrate
     startCommand: gunicorn myproject.wsgi:application --bind 0.0.0.0:$PORT
     envVars:
       - key: SECRET_KEY
