@@ -16,7 +16,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
 application = get_wsgi_application()
 
 # Vercel handler function
-def app(event, context):
+def handler(event, context):
     from django.core.handlers.wsgi import WSGIHandler
     from django.conf import settings
     import sys
