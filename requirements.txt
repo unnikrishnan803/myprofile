@@ -3,3 +3,5 @@ Pillow==10.0.0
 GitPython==3.1.43
 gunicorn
 whitenoise
+
+dj-database-url
